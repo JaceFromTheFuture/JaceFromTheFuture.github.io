@@ -5,9 +5,9 @@ The website will allow Jace to post new music as well as blog posts.
 The website will allow the artist to gain exposure and start to create a following. 
 The target audience will be people who like music and would like to stay up to date with new releases from Jace.
 
-##Use Cases
+## Use Cases
 
-###Use Case 1
+### Use Case 1
 
 Name: Jace
 Age: 22
@@ -21,7 +21,7 @@ Modifying blog posts:
 From the home page, Jace can create a new blog. He can add a title, a body and an image. 
 Jace can also edit a previously posted blog and even delete blogs.
 
-###Use Case 2
+### Use Case 2
 
 Name: Chris
 Name: Chris
@@ -32,29 +32,29 @@ Chris can go to Jace’s site to view blog posts, listen to songs, and share con
 Chris then shares Jace’s site on his twitter account. Chris also browses through some of the blog posts and decides to sign up for the mailing list to receive updates on new content. 
 Chris can also follow the links to Jace’s social media accounts.
 
-##Technologies
+## Technologies
 
 The website will follow a more traditional method of deploying websites. 
 The client side technologies will be HTML CSS and JavaScript. Java will be used on the server side.
 I am also planning on using one of the Database as a service for example Amazon’s DynamoDB.
 
-###User Interfaces
+### User Interfaces
 *Responsive Interface - The site will have a mobile-first responsive interface to improve user experience.
 *CSS3 animations – Animations and micro interactions to improve the interface.
 
-###Server Technologies
+### Server Technologies
 *API Server - The service will be the blog functionality. 
 *File Uploads – File uploads will happen when adding a new song and uploading images for blogs.
 *Email Integration – Users will have the ability to sign up to the mailing list to stay up to date with the latest content.
 
-###Database
+### Database
 *Database as a service
 
-###Service Integration
+### Service Integration
 *Facebook Login – Jace will be able to login via Facebook.
 
 
-##Outline
+## Outline
 
 Week | Plan
 ------------ | -------------
