@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Web Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io.git"
+  },
+  "author": "Emmanuel Zambrano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io/issues"
+  },
+  "homepage": "https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
