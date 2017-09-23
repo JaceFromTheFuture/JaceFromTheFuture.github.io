@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Music and Blog app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io.git"
+  },
+  "author": "EmmanuelZambrano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io/issues"
+  },
+  "homepage": "https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.4"
+  }
+}
