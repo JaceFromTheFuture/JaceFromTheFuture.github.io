@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
+  h1 Jace From the Future
   a(href= '/') Home
   a(href='/blogs') Blogs
   
@@ -11,3 +11,4 @@ block content
       #{blog.title} 
   else
     li There are no blogs
+      a(href= '/blogs/create') create

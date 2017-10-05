@@ -28,5 +28,5 @@ exports.blog_update_post = function(req, res, next){
 
 exports.blog_list = function(req, res){
   var list_blogs = new Object();
-  res.render('blog_list', { title: 'Jace From The Future', blog_list: list_blogs });
+  res.render('blog_list', { title: 'Blogs', blog_list: list_blogs });
 };

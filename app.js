@@ -12,7 +12,6 @@ var mongoURL = require('./mongo');
 
 var app = express();
 
-//Set up mongoose connection
 var mongoose = require('mongoose');
 var mongoDB = mongoURL.mongoConnection;
 mongoose.connect(mongoDB, {
