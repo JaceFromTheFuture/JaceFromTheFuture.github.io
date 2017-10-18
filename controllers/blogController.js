@@ -31,5 +31,5 @@ exports.blog_update_post = function(req, res, next){
 };
 
 exports.blog_list = function(req, res){
-  res.render('blog_list', { title: testString, blog_list: Blog });
+  res.render('blog_list', { title: 'jacefromthefuture', blog_list: Blog });
 };
