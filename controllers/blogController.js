@@ -2,23 +2,54 @@ var Blog = require('../models/blog');
 
 var async = require('async');
 
+exports.blog_list = function(req, res){
+  Blog.find({}, 'title date').exec(function (err, list_blogs) {
+     if (err) {
+       return next(err);
+     }
+     res.render('blog_list', { title: 'Blogs', blog_list: list_blogs });
+   });
+};
+
+exports.blog_view = function(req, res, next){
+  Blog.findById(req.params.id).exec(function (err, blog){
+    if(err){
+      return next(err);
+    }
+    res.render('blog_view', { title: 'Blogs', blog: blog});
+  });
+};
 exports.blog_create_get = function(req, res, next){
   res.render('blog_create', { title: 'New Blog'});
 };
 
 exports.blog_create_post = function(req, res, next){
-  //put data into database
-  var blogTitle = req.body.title;
-  var blogMessage = req.body.message;
-  res.render('blog_create', { title: 'Blog Posted', blogTitle: blogTitle, blogMessage: blogMessage});
-};
+  //actions to perform with post data
+  req.checkBody('title', 'Title must not be empty.').notEmpty();
+  req.checkBody('message', 'Summary must not be empt').notEmpty();
 
-exports.blog_delete_get = function(req, res, next){
-  res.send("Blog Delete GET");
-};
+  req.sanitize('title').escape();
+  req.sanitize('message').escape();
+  req.sanitize('title').trim();
+  req.sanitize('message').trim();
 
-exports.blog_delete_post = function(req, res, next){
-  res.send("Blog Delete Post");
+  var blog = new Blog(
+    { title: req.body.title,
+      message: req.body.message
+    });
+  var errors = req.validationErrors();
+  if (errors) {
+    res.render('blog_create', { title: 'New Blog'});
+  }
+  else {
+    //save data to database
+    blog.save(function (err) {
+      if (err) {
+        console.log(err)
+      }
+      res.redirect('/blogs');
+    });
+  }
 };
 
 exports.blog_update_get = function(req, res, next){
@@ -27,13 +58,4 @@ exports.blog_update_get = function(req, res, next){
 
 exports.blog_update_post = function(req, res, next){
   res.send("Blog Update Post");
-};
-
-exports.blog_list = function(req, res){
-  Blog.find({}, 'title body').exec(function (err, list_blogs) {
-     if (err) {
-       return next(err);
-     }
-     res.render('blog_list', { title: 'Blogs', blog_list: list_blogs });
-   });
 };

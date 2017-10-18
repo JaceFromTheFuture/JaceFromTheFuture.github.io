@@ -15,6 +15,8 @@ router.get('/:title/update', blog_controller.blog_update_get);
 
 router.post('/:title/update', blog_controller.blog_update_post);
 
+router.get('/:id', blog_controller.blog_view);
+
 router.get('/', blog_controller.blog_list);
 
 module.exports = router;
