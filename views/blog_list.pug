@@ -1,14 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  a(href= '/') Home
-  a(href='/blogs') Blogs
-  
   ul
   each blog in blog_list
     li 
       #{blog.title} 
   else
-    li There are no blogs
+    p There are no blogs
       a(href= '/blogs/create') create
