@@ -8,5 +8,8 @@ var BlogSchema = Schema({
   date: { type: Date, default: Date.now }
 });
 
-//Export model
+BlogSchema.virtual('url').get(function () {
+  return '/blogs/'+this.title;
+});
+
 module.exports = mongoose.model('Blog', BlogSchema);

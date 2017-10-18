@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Jace From The Future
+  a(href= '/') Home
+  a(href='/blogs') Blogs
+  
+  h2= title
+  
+  p Image Upload coming soon..
+  
+  form(method='POST' action='')
+    input(type='text' placeholder='title' name='title')
+    textarea(name="message" placeholder="Write your ideas...")
+    input(type='submit' value='Send')  

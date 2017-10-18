@@ -1,13 +1,17 @@
-var Blog = require('../models/blog');
+//var Blog = require('../models/blog');
+var Blog = new Object;
 
 var async = require('async');
 
 exports.blog_create_get = function(req, res, next){
-  res.send("Blog Create GET");
+  res.render('blog_create_get', { title: 'New Blog'});
 };
 
 exports.blog_create_post = function(req, res, next){
-  res.send("Blog Create Post");
+  //put data into database
+  var blogTitle = req.body.title;
+  var blogMessage = req.body.message;
+  res.render('blog_create_post', { title: 'Blog Posted', blogTitle: blogTitle, blogMessage: blogMessage});
 };
 
 exports.blog_delete_get = function(req, res, next){
@@ -27,6 +31,5 @@ exports.blog_update_post = function(req, res, next){
 };
 
 exports.blog_list = function(req, res){
-  var list_blogs = new Object();
-  res.render('blog_list', { title: 'Blogs', blog_list: list_blogs });
+  res.render('blog_list', { title: testString, blog_list: Blog });
 };

@@ -8,12 +8,12 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var blogs = require('./routes/blogs');
-var mongoURL = require('./mongo');
+var mongo = require('./mongo');
 
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = mongoURL.mongoConnection;
+var mongoDB = mongo.mongoURL;
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
