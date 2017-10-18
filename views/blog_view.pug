@@ -2,5 +2,7 @@ extends layout
 
 block content
   h1 #{blog.title}
-  p #{blog.date}
+  span #{blog.date}
   p #{blog.message}
+  p
+    a(href=blog.url+'/update') Update Blog

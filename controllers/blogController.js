@@ -53,7 +53,12 @@ exports.blog_create_post = function(req, res, next){
 };
 
 exports.blog_update_get = function(req, res, next){
-  res.send("Blog Update GET");
+  Blog.findById(req.params.id).exec(function (err, blog){
+    if(err){
+      return next(err);
+    }
+    res.render('blog_update', { title: 'Blogs', blog: blog});
+  });
 };
 
 exports.blog_update_post = function(req, res, next){

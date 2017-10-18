@@ -1,11 +1,12 @@
 extends layout
 
 block content
+  h1 Blogs
   each blog in blog_list
     div(class='blogSection')
       a(href=blog.url class='blogTitle') #{blog.title}  
-      p #{blog.date}
+      span #{blog.date}
   else
     p There are no blogs
     
-  a(href= '/blogs/create') create
+  a(href= '/blogs/create' id='createLink') Create New Blog
