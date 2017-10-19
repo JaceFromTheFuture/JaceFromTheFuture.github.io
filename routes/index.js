@@ -12,5 +12,9 @@ router.post('/', function(req, res, next) {
   res.render('index', { title: 'Jace From the Future' });
 });
 
+router.get('/about', function(req, res, next) {
+  res.render('about', { title: 'About the Artist' });
+});
+
 
 module.exports = router;

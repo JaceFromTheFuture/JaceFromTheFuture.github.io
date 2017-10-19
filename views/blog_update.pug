@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  h2= title
+  h1= title
   
   p Image Upload coming soon..
   
   form(method='POST' action='')
-    input(type='text' placeholder='title' name='title' value=(#{blog.title))
-    input(type='text' placeholder='message' name='message' value=(#{blog.message}))
+    input(type='text' placeholder='title' name='title')
+    input(type='text' placeholder='message' name='message')
     input(type='submit' value='Send')  

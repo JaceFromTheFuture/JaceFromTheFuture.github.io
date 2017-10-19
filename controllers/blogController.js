@@ -62,5 +62,5 @@ exports.blog_update_get = function(req, res, next){
 };
 
 exports.blog_update_post = function(req, res, next){
-  res.send("Blog Update Post");
+  
 };
