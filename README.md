@@ -13,7 +13,7 @@ NPM install to install the application.
 
 NPM start to run it.
 
-Head to localhost:3000 to view the site
+Head to localhost:3000 to view the site.
 
 ### Use Case 1
 
