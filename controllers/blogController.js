@@ -57,10 +57,38 @@ exports.blog_update_get = function(req, res, next){
     if(err){
       return next(err);
     }
-    res.render('blog_update', { title: 'Blogs', blog: blog});
+    res.render('blog_update', { title: 'Update Blog', blog: blog});
   });
 };
 
 exports.blog_update_post = function(req, res, next){
-  
+  //actions to perform with post data
+  req.checkBody('title', 'Title must not be empty.').notEmpty();
+  req.checkBody('message', 'Summary must not be empt').notEmpty();
+
+  req.sanitize('title').escape();
+  req.sanitize('message').escape();
+  req.sanitize('title').trim();
+  req.sanitize('message').trim();
+
+  var blog = new Blog(
+    { title: req.body.title,
+      message: req.body.message,
+      _id:req.params.id 
+    });
+
+  var errors = req.validationErrors();
+  if (errors) {
+    res.render('blog_update', { title: 'Update Blog'});
+  }
+  else {
+    //send updated data to database
+    Blog.findByIdAndUpdate(req.params.id, blog, {}, function (err, ablog){
+      if (err) {
+        return next(err);
+      }
+      //successful - redirect to book detail page.
+      res.redirect('/blogs');
+    });
+  }
 };

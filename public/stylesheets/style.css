@@ -70,6 +70,10 @@ body {
 #createLink{
   display: block;
 }
+#blogMessage{
+	width: 90%;
+	margin-left: 10%;
+}
 h1{
 	font-size: 2.25em;
 }
@@ -103,8 +107,9 @@ a:visited {
   text-align: center;
 }
 .blogSection{
-  display: inline;
+  display: block;
   margin-left: 1.5em;
+	margin-bottom: .667em;
   max-width: 100%;
   background: #eeeeee;
 }
