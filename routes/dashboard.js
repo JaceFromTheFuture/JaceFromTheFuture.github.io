@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var Blog = require('../models/blog');
 
-router.get('/', function(req, res, next) {
-  res.render('dashboard', { title: 'JFTF Dashboard' });
-});
+var dashboard_controller = require('../controllers/dashboardController');
+
+router.get('/', dashboard_controller.dashboard);
 
 router.post('/', function(req, res, next) {
   //get emails and add to mailing list

@@ -7,9 +7,9 @@ router.get('/create', blog_controller.blog_create_get);
 
 router.post('/create', blog_controller.blog_create_post);
 
-router.get('/:title/update', blog_controller.blog_update_get);
+router.get('/:id/update', blog_controller.blog_update_get);
 
-router.post('/:title/update', blog_controller.blog_update_post);
+router.post('/:id/update', blog_controller.blog_update_post);
 
 router.get('/:id', blog_controller.blog_view);
 

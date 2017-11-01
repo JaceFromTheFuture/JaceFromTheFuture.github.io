@@ -19,6 +19,7 @@ exports.blog_view = function(req, res, next){
     res.render('blog_view', { title: 'Blogs', blog: blog});
   });
 };
+
 exports.blog_create_get = function(req, res, next){
   res.render('blog_create', { title: 'New Blog'});
 };
@@ -37,9 +38,10 @@ exports.blog_create_post = function(req, res, next){
     { title: req.body.title,
       message: req.body.message
     });
+
   var errors = req.validationErrors();
   if (errors) {
-    res.render('blog_create', { title: 'New Blog'});
+    res.render('blog_create', { title: 'New Blog', errorMessage: 'Fill in the information'});
   }
   else {
     //save data to database
@@ -74,7 +76,7 @@ exports.blog_update_post = function(req, res, next){
   var blog = new Blog(
     { title: req.body.title,
       message: req.body.message,
-      _id:req.params.id 
+      _id:req.params.id
     });
 
   var errors = req.validationErrors();
@@ -82,12 +84,10 @@ exports.blog_update_post = function(req, res, next){
     res.render('blog_update', { title: 'Update Blog'});
   }
   else {
-    //send updated data to database
-    Blog.findByIdAndUpdate(req.params.id, blog, {}, function (err, ablog){
-      if (err) {
-        return next(err);
+    Blog.findOneAndUpdate({_id: req.params.id}, blog, {new: true}, function(err, blog) {
+      if (err){
+        res.send(err);
       }
-      //successful - redirect to book detail page.
       res.redirect('/blogs');
     });
   }
