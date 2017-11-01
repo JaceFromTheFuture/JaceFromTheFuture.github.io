@@ -7,10 +7,6 @@ router.get('/create', blog_controller.blog_create_get);
 
 router.post('/create', blog_controller.blog_create_post);
 
-//router.get('/:id/delete', blog_controller.blog_delete_get);
-
-//router.post('/:id/delete', blog_controller.blog_delete_post);
-
 router.get('/:title/update', blog_controller.blog_update_get);
 
 router.post('/:title/update', blog_controller.blog_update_post);

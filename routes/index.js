@@ -16,5 +16,4 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About the Artist' });
 });
 
-
 module.exports = router;
