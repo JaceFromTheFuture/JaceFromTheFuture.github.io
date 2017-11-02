@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var BlogSchema = Schema({
   title: {type: String, required: true},
   message: {type: String, required: true},
-  date: { type: Date, default: Date.now }
+  date: {type: String, required: true}
 });
 
 BlogSchema.virtual('url').get(function () {

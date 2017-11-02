@@ -11,4 +11,6 @@ router.get('/:id', api_controller.blog_view);
 
 router.post('/:id', api_controller.blog_update);
 
+router.delete('/:id', api_controller.blog_delete);
+
 module.exports = router;

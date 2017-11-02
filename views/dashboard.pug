@@ -10,6 +10,7 @@ html(lang='en')
     
     each blog in blog_list
       div(class='blogSection')
+        // link to edit blog dynamically
         a(href=blog.url class='blogTitle') #{blog.title}  
         span #{blog.date}
     else
