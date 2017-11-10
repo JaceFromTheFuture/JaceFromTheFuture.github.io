@@ -7,12 +7,11 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     h1= title
-    
-    each blog in blog_list
-      div(class='blogSection')
-        // link to edit blog dynamically
-        a(href=blog.url class='blogTitle') #{blog.title}  
-        span #{blog.date}
-    else
-      p There are no blogs
+    div(class='dashboardSection')
+      h2 Create Blog
+      form(method='POST' action='' enctype="multipart/form-data")
+        input(type='file' name='file' accept='image/*')
+        input(type='text' placeholder='title' name='title')
+        input(type='textarea', placeholder='Message' name='message' value='ehlo')
+        input(type='submit' value='Send')
     

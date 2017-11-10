@@ -3,11 +3,8 @@ var router = express.Router();
 
 var dashboard_controller = require('../controllers/dashboardController');
 
-router.get('/', dashboard_controller.dashboard);
+router.get('/', dashboard_controller.dashboard_get);
 
-router.post('/', function(req, res, next) {
-  //get emails and add to mailing list
-  res.render('dashboard', { title: 'JFTF Dashboard' });
-});
+router.post('/', dashboard_controller.dashboard_post);
 
 module.exports = router;

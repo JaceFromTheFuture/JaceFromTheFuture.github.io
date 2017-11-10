@@ -1,7 +1,5 @@
 var Blog = require('../models/blog');
 
-var async = require('async');
-
 exports.blog_list = function(req, res){
   Blog.find({}, 'title date').exec(function (err, list_blogs) {
      if (err) {
