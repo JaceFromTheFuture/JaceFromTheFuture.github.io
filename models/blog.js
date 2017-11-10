@@ -9,7 +9,7 @@ var BlogSchema = Schema({
 });
 
 BlogSchema.virtual('url').get(function () {
-  return '/blogs/'+this._id;
+  return '/dashboard/'+this._id;
 });
 
 module.exports = mongoose.model('Blog', BlogSchema);

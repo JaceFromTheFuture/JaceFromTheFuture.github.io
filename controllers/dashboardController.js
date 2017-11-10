@@ -1,6 +1,4 @@
-var Blog = require('../models/blog');
 var request = require('request');
-
 
 exports.dashboard_get = function(req, res){
   var options = { method: 'GET',
@@ -8,8 +6,9 @@ exports.dashboard_get = function(req, res){
   };
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
-    console.log(body);
-    res.json(body);
+    var blogs = JSON.parse(body);
+    console.log(blogs);
+    res.render('dashboard', { title: 'JFTF Dashboard', blog_list: blogs });
   });
 };
 
@@ -21,7 +20,7 @@ exports.dashboard_post = function(req, res){
   req.sanitize('message').escape();
   req.sanitize('title').trim();
   req.sanitize('message').trim();
-  
+
   var options = { method: 'POST',
   url: 'http://localhost:3000/api',
   headers:
@@ -33,4 +32,20 @@ exports.dashboard_post = function(req, res){
     if (error) throw new Error(error);
     console.log(body);}
   );
+};
+
+exports.dashboard_edit_get = function(req, res){
+  var url = 'http://localhost:3000/api/' + req.params.id
+  var options = { method: 'GET',
+    url: url
+  };
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+    console.log(body);
+    res.send(body);
+  });
+};
+
+exports.dashboard_edit_post = function(req, res){
+  res.send('hello');
 };

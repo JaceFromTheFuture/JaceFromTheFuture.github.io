@@ -5,13 +5,25 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="/javascripts/script.js")
   body
     h1= title
     div(class='dashboardSection')
-      h2 Create Blog
+      h2 New Blog
       form(method='POST' action='' enctype="multipart/form-data")
         input(type='file' name='file' accept='image/*')
         input(type='text' placeholder='title' name='title')
-        input(type='textarea', placeholder='Message' name='message' value='ehlo')
+        textarea(name='message')
         input(type='submit' value='Send')
+        
+    div(class='dashboardSection')
+      h2 Blogs
+      each blog in blog_list
+        div(class='blogSection')
+          p #{blog.title}
+          span #{blog.date}
+          a(href='/dashboard/'+blog._id class='editButton') Edit 
+      else
+        p There are no blogs
     
