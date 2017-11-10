@@ -60,9 +60,9 @@ exports.blog_update = function(req, res){
 };
 
 exports.blog_delete = function(req, res){
-  Blog.remove({_id: req.params.id}, function(err, blog) {
+  Blog.remove({}, function(err, blog) {
     if (err)
       res.send(err);
-    res.json({ message: 'Blog successfully deleted' });
+    res.json({ message: 'Blogs successfully deleted' });
   });
 };

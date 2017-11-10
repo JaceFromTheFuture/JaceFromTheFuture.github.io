@@ -1,5 +1,16 @@
-extends layout
-
-block content
-  h1= title
-  p Jose Zambrano, also known as “Jace” is an artist from the south suburbs of Chicago. While studying at Saint Xavier, he is also pursuing a career in the arts, specifically music. Jace gets inspired by all forms of art and his goal is to inspire the world with his own.
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="/javascripts/script.js")
+  body
+    div(class='header')
+      a(href= '/' id='logo') Jace From the Future
+      a(href= '/about' class='menu') About
+      a(href='/blogs' class='menu') Blogs
+    h1= title
+    p Jose Zambrano, also known as “Jace” is an artist from the south suburbs of Chicago. While studying at Saint Xavier, he is also pursuing a career in the arts, specifically music. Jace gets inspired by all forms of art and his goal is to inspire the world with his own.

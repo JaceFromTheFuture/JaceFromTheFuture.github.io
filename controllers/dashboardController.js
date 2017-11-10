@@ -42,7 +42,8 @@ exports.dashboard_edit_get = function(req, res){
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
     console.log(body);
-    res.send(body);
+    var blog = JSON.parse(body);
+    res.render('blog_form', {blog : blog});
   });
 };
 
