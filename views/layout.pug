@@ -5,11 +5,13 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
     script(src="/javascripts/script.js")
   body
-    div(class='header')
+    header
       a(href= '/' id='logo') Jace From the Future
-      a(href= '/about' class='menu') About
-      a(href='/blogs' class='menu') Blogs
+      nav
+        a(href= '/about' class='menu') About
+        a(href='/blogs' class='menu') Blogs
     block content

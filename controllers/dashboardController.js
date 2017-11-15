@@ -42,11 +42,33 @@ exports.dashboard_edit_get = function(req, res){
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
     console.log(body);
-    var blog = JSON.parse(body);
-    res.render('blog_form', {blog : blog});
+    if(body == 'null'){
+      res.redirect('/dashboard');
+    }
+    else {
+      var blog = JSON.parse(body);
+      res.render('blog_form', {blog : blog});
+    }
   });
 };
 
 exports.dashboard_edit_post = function(req, res){
-  res.send('hello');
+  var url = 'http://localhost:3000/api/' + req.params.id;
+  //validate form data
+
+  //upload file get link
+
+  //send to api
+  var options = { method: 'POST',
+    url: url,
+    headers: { 'content-type': 'application/json' },
+    form: { title: 'helelo', message: 'hello' }
+  };
+
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+    console.log(body);
+    res.redirect('/dashboard');
+  });
+
 };

@@ -1,8 +1,0 @@
-extends layout
-
-block content
-  h1 #{blog.title}
-  span #{blog.date}
-  p(id='blogMessage') #{blog.message}
-  p
-    a(href=blog.url+'/update') Update Blog
