@@ -53,8 +53,6 @@ body{
 	font-family: 'Exo 2', sans-serif;
 	font-size: 1em;
 	line-height: 1.618em;
-	background: white;
-	max-width: 100%;
 }
 header{
 	color: black;
@@ -64,17 +62,17 @@ main{
 	line-height: 2.618em;
 }
 h1{
+	font-size: 1.618em;
 }
 h2{
-	color: #222;
 }
 p{
-
 }
 span{
 }
 a{
 	text-decoration: none;
+	color: inherit;
 }
 a:hover{
 	color: #BBB;
@@ -114,6 +112,13 @@ form{
 	display: flex;
 	flex-direction: column;
 }
+input{
+	margin: .618em 0 .618em 0;
+}
+textarea{
+	margin: .236em 0 .618em 0;
+
+}
 /*Modue*/
 nav > a{
 	font-size: 1em;
@@ -149,14 +154,6 @@ nav > a{
 .blogTitle{
 	font-weight: bold;
 }
-.linkButton{
-	padding: .236em;
-	text-decoration: none;
-	color: inherit;
-}
-.linkButton:hover{
-	color: #d3394c;
-}
 input{
 	padding: 0.236em 0.236em 0.236em 0.236em;
 }
@@ -166,23 +163,27 @@ input[type=file]{
 	opacity: 0;
 }
 input[type=submit]{
-	background: #CCC;
+	background: grey;
+	color: white;
 	display: inline-block;
-	width: 11em;
+	width: 11.089em;
 }
 .customUpload{
-	color: #d3394c;
+	color: grey;
 	fill: currentColor;
-	width: 11em;
+	width: 11.089em;
 	display: inline-block;
   cursor: pointer;
 }
 textarea{
 	resize: none;
+	height: 17em;
 }
 input, textarea{
-	border : 1px solid #CCC;
+	border : 1px solid grey;
 	border-radius: 2px;
+	outline: none;
+	font-family: inherit;
 }
 input:focus, textarea:focus{
 	border : 1px solid grey;
@@ -205,6 +206,8 @@ iframe{
 		width: 20%;
 	}
 	nav{
+		display: flex;
+		flex-direction: column;
 	}
 	main{
 		flex: 5;
@@ -212,5 +215,36 @@ iframe{
 	}
 	footer{
 		width: 100%;
+	}
+
+	#mailingList{
+		width: 30%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	#mailInput{
+		width: 60%;
+	}
+	#mailInput:focus{
+
+	}
+	#mailButton{
+		width: 30%;
+		color: white;
+		text-decoration: none;
+		background: grey;
+	}
+	textarea{
+		resize: none;
+		height: 17.942em;
+	}
+	input, textarea{
+		border : 1px solid #CCC;
+		border-radius: 2px;
+	}
+	iframe{
+		width: 17.942em;
+		height: 20px;
 	}
 }

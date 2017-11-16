@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  main
+    article
+      h2 Blogs
+      each blog in blog_list
+        section 
+          a(href='/blogs/'+blog._id) #{blog.title} 
+            span edited: #{blog.date}
+      else
+        p There are no blogs
