@@ -21,6 +21,15 @@ exports.dashboard_post = function(req, res){
   req.sanitize('title').trim();
   req.sanitize('message').trim();
 
+  var errors = req.validationErrors();
+
+  if(errors){
+    res.render('dashboard', { title: 'JFTF Errors', blog_list: blogs } );
+  }
+  else {
+
+  }
+
   var options = { method: 'POST',
   url: 'http://localhost:3000/api',
   headers:

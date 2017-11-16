@@ -57,31 +57,27 @@ body{
 	max-width: 100%;
 }
 header{
-	color: grey;
+	color: black;
 }
 main{
 	padding: 1.618em 1.618em 1.618em 1.618em;
 	line-height: 2.618em;
 }
 h1{
-	font-weight: 600;
 }
 h2{
-
+	color: #222;
 }
 p{
 
 }
 span{
-	font-size: .618em;
 }
 a{
-	font-size: .618em;
 	text-decoration: none;
-	color: grey;
 }
 a:hover{
-	text-decoration: underline;
+	color: #BBB;
 }
 a:visited{
 	color: inherit;
@@ -90,7 +86,6 @@ a:visited{
 /*Layout*/
 header{
 	padding: 1.618em 1.618em 1.618em 1.618em;
-	background: #181818;
 }
 nav{
 
@@ -100,19 +95,38 @@ main{
 }
 article{
 }
+section{
+
+}
+span{
+	font-size: .618em;
+	padding: 0.236em;
+	border-left: 1px solid grey;
+}
 footer{
-	border-top: 1px solid grey;
 	text-align: center;
 	color: grey;
 	padding: 1.618em 1.618em 1.618em 1.618em;
 }
 form{
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 }
 /*Modue*/
+nav > a{
+	font-size: 1em;
+	margin-right: .618em;
+}
+#logo{
+	text-decoration: none;
+	color: black;
+	font-size: 1.618em;
+}
+#logo:hover{
+	text-decoration: none;
+}
 #mailingList{
 	width: 60%;
 	margin: 0 auto;
@@ -123,36 +137,54 @@ form{
 #mailInput{
 	width: 60%;
 }
+#mailInput:focus{
+
+}
 #mailButton{
 	width: 30%;
 	color: white;
 	text-decoration: none;
 	background: grey;
 }
-#logo{
-	color: white;
-	font-size: 1.618em;
-}
-#logo:hover{
-	text-decoration: none;
+.blogTitle{
+	font-weight: bold;
 }
 .linkButton{
-	font-size: .618em;
+	padding: .236em;
+	text-decoration: none;
+	color: inherit;
 }
-.button{
-	width: 30%;
-}
-nav > a{
-	font-size: 1em;
-	margin-right: .618em;
+.linkButton:hover{
+	color: #d3394c;
 }
 input{
 	padding: 0.236em 0.236em 0.236em 0.236em;
+}
+input[type=file]{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+input[type=submit]{
+	background: #CCC;
+	display: inline-block;
+	width: 11em;
+}
+.customUpload{
+	color: #d3394c;
+	fill: currentColor;
+	width: 11em;
+	display: inline-block;
+  cursor: pointer;
 }
 textarea{
 	resize: none;
 }
 input, textarea{
+	border : 1px solid #CCC;
+	border-radius: 2px;
+}
+input:focus, textarea:focus{
 	border : 1px solid grey;
 	border-radius: 2px;
 }
@@ -161,3 +193,24 @@ iframe{
 	height: 20px;
 }
 /*State*/
+@media (min-width: 700px) {
+	body{
+		min-height: 100vh;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	header{
+		flex: 1;
+		width: 20%;
+	}
+	nav{
+	}
+	main{
+		flex: 5;
+		width: 80%;
+	}
+	footer{
+		width: 100%;
+	}
+}
