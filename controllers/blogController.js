@@ -25,7 +25,7 @@ exports.blog_view = function(req, res, next){
     }
     else {
       var blog = JSON.parse(body);
-      res.render('blog_view', {blog : blog});
+      res.render('blog_view', {title : 'Blog', blog : blog});
     }
   });
 };
