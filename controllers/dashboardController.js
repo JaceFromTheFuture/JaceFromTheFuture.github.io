@@ -1,4 +1,10 @@
 var request = require('request');
+var aws = require('aws-sdk');
+var amazon = require('../aws_credentials');
+
+var awsKeyID = amazon.AWS_ACCESS_KEY;
+var awsSecretKey = amazon.AWS_SECRET_KEY;
+var awsBucket = amazon.S3_BUCKET;
 
 exports.dashboard_get = function(req, res){
   var options = { method: 'GET',
@@ -7,12 +13,18 @@ exports.dashboard_get = function(req, res){
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
     var blogs = JSON.parse(body);
-    console.log(blogs);
     res.render('dashboard', { title: 'JFTF Dashboard', blog_list: blogs });
   });
 };
 
-exports.dashboard_post = function(req, res){
+/*exports.dashboard_post = function(req, res){
+
+  console.log(awsKeyID);
+  console.log(req.file);
+  console.log(req.body.title);
+
+
+
   req.checkBody('title', 'Title must not be empty.').notEmpty();
   req.checkBody('message', 'Summary must not be empt').notEmpty();
 
@@ -24,25 +36,24 @@ exports.dashboard_post = function(req, res){
   var errors = req.validationErrors();
 
   if(errors){
-    res.render('dashboard', { title: 'JFTF Errors', blog_list: blogs } );
+    res.render('dashboard', { title: 'JFTF Errors', errors : errors} );
   }
   else {
+    var options = { method: 'POST',
+    url: 'http://localhost:3000/api',
+    headers:
+     { 'content-type': 'application/json' },
+    body: { title: req.body.title, message: req.body.message },
+    json: true };
 
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      console.log(body);
+    });
   }
 
-  var options = { method: 'POST',
-  url: 'http://localhost:3000/api',
-  headers:
-   { 'content-type': 'application/json' },
-  body: { title: 'New', message: 'New Blog' },
-  json: true };
-
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-    console.log(body);}
-  );
 };
-
+*/
 exports.dashboard_edit_get = function(req, res){
   var url = 'http://localhost:3000/api/' + req.params.id
   var options = { method: 'GET',
