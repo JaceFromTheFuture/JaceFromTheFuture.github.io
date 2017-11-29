@@ -17,6 +17,7 @@ exports.blog_create = function(req, res){
     {
       title: req.body.title,
       message: req.body.message,
+      link: req.body.link,
       date: blogDate
     });
 
@@ -46,6 +47,7 @@ exports.blog_update = function(req, res){
       _id: req.params.id,
       title: req.body.title,
       message: req.body.message,
+      link: req.body.link,
       date: blogDate
     });
 

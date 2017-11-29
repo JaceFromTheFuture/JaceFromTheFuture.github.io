@@ -10,11 +10,14 @@ html(lang='en')
     script(src="/javascripts/script.js")
   body
     header
-      a(href= '/' id='logo') Jace from the Future
-      nav
-        a(href= '/about') About
-        a(href='/blogs') Blogs
-        a(href= 'https://www.instagram.com/jacefromthefuture/?hl=en') Instagram
-        a(href= 'https://soundcloud.com/jacefromthefuture') Soundcloud
-
-    block content
+      a(href= '/dashboard' id='logo') JFTF
+    main
+      h1= title
+      form(method='POST' action='' enctype="multipart/form-data")
+        input(type='file' name='file' accept='image/*')
+        input(type='text' placeholder='title' name='title')
+        textarea(name='message')
+        input(type='submit' value='Send' class='button')
+      a(href='/dashboard' class='linkButton') Cancel
+        
+    

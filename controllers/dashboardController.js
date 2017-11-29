@@ -17,43 +17,6 @@ exports.dashboard_get = function(req, res){
   });
 };
 
-/*exports.dashboard_post = function(req, res){
-
-  console.log(awsKeyID);
-  console.log(req.file);
-  console.log(req.body.title);
-
-
-
-  req.checkBody('title', 'Title must not be empty.').notEmpty();
-  req.checkBody('message', 'Summary must not be empt').notEmpty();
-
-  req.sanitize('title').escape();
-  req.sanitize('message').escape();
-  req.sanitize('title').trim();
-  req.sanitize('message').trim();
-
-  var errors = req.validationErrors();
-
-  if(errors){
-    res.render('dashboard', { title: 'JFTF Errors', errors : errors} );
-  }
-  else {
-    var options = { method: 'POST',
-    url: 'http://localhost:3000/api',
-    headers:
-     { 'content-type': 'application/json' },
-    body: { title: req.body.title, message: req.body.message },
-    json: true };
-
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-      console.log(body);
-    });
-  }
-
-};
-*/
 exports.dashboard_edit_get = function(req, res){
   var url = 'http://localhost:3000/api/' + req.params.id
   var options = { method: 'GET',
@@ -70,25 +33,4 @@ exports.dashboard_edit_get = function(req, res){
       res.render('blog_form', {blog : blog});
     }
   });
-};
-
-exports.dashboard_edit_post = function(req, res){
-  var url = 'http://localhost:3000/api/' + req.params.id;
-  //validate form data
-
-  //upload file get link
-
-  //send to api
-  var options = { method: 'POST',
-    url: url,
-    headers: { 'content-type': 'application/json' },
-    form: { title: 'helelo', message: 'hello' }
-  };
-
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-    console.log(body);
-    res.redirect('/dashboard');
-  });
-
 };

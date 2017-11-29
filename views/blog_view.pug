@@ -4,6 +4,8 @@ block content
   main
     article
       h1 #{blog.title}
-      span #{blog.date}
+      figure
+        img(src=blog.link)
+        figcaption #{blog.date}
       p #{blog.message}
     

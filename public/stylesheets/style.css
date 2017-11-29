@@ -67,10 +67,6 @@ h1{
 h2{
 	color: grey;
 }
-p{
-}
-span{
-}
 a{
 	text-decoration: none;
 	color: inherit;
@@ -82,24 +78,16 @@ a:visited{
 	color: inherit;
 	text-decoration: none;
 }
-/*Layout*/
-header{
-	padding: 1.618em 1.618em 1.618em 1.618em;
-}
-nav{
-
-}
-main{
-
-}
-article{
-}
-section{
-
-}
 span{
 	font-size: .618em;
 	padding: 0.236em;
+}
+figcaption{
+	font-size: .618em;
+}
+/*Layout*/
+header{
+	padding: 1.618em 1.618em 1.618em 1.618em;
 }
 footer{
 	text-align: center;
@@ -120,6 +108,12 @@ textarea{
 
 }
 /*Modue*/
+figure{
+	width: 100%;
+}
+img{
+	max-width: 100%;
+}
 nav > a{
 	font-size: 1em;
 	margin-right: .618em;
@@ -128,9 +122,6 @@ nav > a{
 	text-decoration: none;
 	color: black;
 	font-size: 1.618em;
-}
-#logo:hover{
-	text-decoration: none;
 }
 #mailingList{
 	width: 60%;
@@ -142,14 +133,16 @@ nav > a{
 #mailInput{
 	width: 60%;
 }
-#mailInput:focus{
-
-}
-#mailButton{
+input[type=submit]{
 	width: 30%;
 	color: white;
 	text-decoration: none;
 	background: grey;
+}
+input[type=file]{
+	width: 30%;
+	text-decoration: none;
+	border: none;
 }
 .blogTitle{
 	font-weight: bold;
@@ -157,14 +150,7 @@ nav > a{
 input{
 	padding: 0.236em 0.236em 0.236em 0.236em;
 }
-/*
-input[type=submit]{
-	background: grey;
-	color: white;
-	display: inline-block;
-	width: 11.089em;
-}
-*/
+
 .customUpload{
 	color: grey;
 	fill: currentColor;
