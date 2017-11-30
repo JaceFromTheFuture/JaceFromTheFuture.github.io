@@ -58,6 +58,7 @@ header{
 	color: black;
 }
 main{
+	text-align: center;
 	padding: 1.618em 1.618em 1.618em 1.618em;
 	line-height: 2.618em;
 }
@@ -69,11 +70,17 @@ h2{
 	color: grey;
 }
 a{
-	text-decoration: none;
 	color: inherit;
+	text-decoration: none;
 }
-a:hover{
-	color: #BBB;
+main>a:hover{
+	color: #CCC;
+}
+article>a:hover{
+	color: #CCC;
+}
+footer > a:hover{
+	color: #CCC;
 }
 a:visited{
 	color: inherit;
@@ -97,9 +104,12 @@ footer{
 	display: flex;
 	flex-direction: column;
 }
-footer > a{
-	margin-left:2px;
-	margin-right: 2px;
+#blogContainer{
+	display: flex;
+	flex-direction: column;
+}
+#blogContainer > a:hover {
+	color: #CCC;
 }
 form{
 	width: 100%;
@@ -115,6 +125,10 @@ textarea{
 
 }
 /*Modue*/
+nav > a {
+	color: grey;
+	margin-right: 1em;
+}
 nav > a:focus{
 	text-decoration: underline;
 }
@@ -130,36 +144,22 @@ figure{
 }
 img{
 	max-width: 100%;
-	animation-name: slidein;
-	animation-duration: 1.5s;
 }
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
+#goldmine{
+	width: 11em;
+	margin-right: 1.618em;
 }
-nav > a{
-	font-size: 1em;
-	margin-right: .618em;
+#goldmineWrapper{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #logo{
 	text-decoration: none;
 	color: black;
 	font-size: 1.618em;
-}
-#mailingList{
-	width: 60%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-#mailInput{
-	width: 60%;
 }
 input[type=submit]{
 	width: 30%;
@@ -193,14 +193,8 @@ iframe{
 	width: 100%;
 	height: 20px;
 }
-footer{
-	border-top: 1px solid grey;
-}
 /*State*/
 @media (min-width: 700px) {
-	header{
-		border-right: 1px solid grey;
-	}
 	body{
 		min-height: 100vh;
 		display: flex;
@@ -216,30 +210,22 @@ footer{
 		flex-direction: column;
 	}
 	main{
+		text-align: left;
 		flex: 6;
 		width: 80%;
 	}
 	footer{
 		width: 100%;
 	}
-
-	#mailingList{
-		width: 30%;
+	#goldmineWrapper{
+		margin-top: 1em;
+		margin-bottom: 1em;
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
+		align-items: center;
 	}
-	#mailInput{
+	img{
 		width: 60%;
-	}
-	#mailInput:focus{
-
-	}
-	#mailButton{
-		width: 30%;
-		color: white;
-		text-decoration: none;
-		background: grey;
 	}
 	textarea{
 		resize: none;

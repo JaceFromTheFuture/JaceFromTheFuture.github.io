@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var BlogSchema = Schema({
   title: {type: String, required: true},
   message: {type: String, required: true},
-  link: {type: String},
+  link: {type: String, required: true, default: ''},
   date: {type: String, required: true},
   hits: {type: Number, required: true, default: 0}
 });

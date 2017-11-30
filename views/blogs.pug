@@ -5,10 +5,8 @@ block content
     article
       h1 Blogs
       div(id='blogContainer')
-        each blog in blog_list
-          div(class='blogPreview') 
+        each blog in blog_list 
             a(href='/blogs/'+blog._id) #{blog.title} 
-              img(src=blog.link)
               span edited: #{blog.date}
         else
           p There are no blogs at the time. 
