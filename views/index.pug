@@ -2,11 +2,7 @@ extends layout
 
 block content
   main
-    iframe(scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/295234443&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true")
-  footer
-    p Enter email for updates
-    form(method='POST' action='' id='mailingList')
-      input(type='text' id='mailInput' placeholder='email@email.com' name='email')
-      input(type='submit' value='Sign up' id='mailButton')  
-      
-    a(href='/dashboard') Login
+    figure
+      iframe(scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/295234443&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true")
+      figcaption Goldmine - Jace from the Future
+    a(href='/blogs') More Blogs..

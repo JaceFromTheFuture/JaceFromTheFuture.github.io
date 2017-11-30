@@ -5,6 +5,10 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(language="javascript" type="text/javascript" src="/javascripts/jquery.js")
+    script(language="javascript" type="text/javascript" src="/javascripts/jquery.flot.js")
+    script(language="javascript" type="text/javascript" src="/javascripts/jquery.flot.categories.js")
     link(href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet")
     script(src="/javascripts/script.js")
   body
@@ -21,6 +25,8 @@ html(lang='en')
         else
           p There are no blogs
         a(href='/dashboard/create') New Blog
+      article
+        h2 Blog Hits 
+        div(id="placeholder")
     footer
       a(target='_blank' href='/') View Site
-    

@@ -6,7 +6,8 @@ var BlogSchema = Schema({
   title: {type: String, required: true},
   message: {type: String, required: true},
   link: {type: String},
-  date: {type: String, required: true}
+  date: {type: String, required: true},
+  hits: {type: Number, required: true, default: 0}
 });
 
 BlogSchema.virtual('url').get(function () {

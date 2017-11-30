@@ -65,6 +65,7 @@ h1{
 	font-size: 1.618em;
 }
 h2{
+	font-size: 1.618em;
 	color: grey;
 }
 a{
@@ -93,6 +94,11 @@ footer{
 	text-align: center;
 	color: grey;
 	padding: 1.618em 1.618em 1.618em 1.618em;
+	display: flex;
+	flex-direction: column;
+}
+footer > a{
+	margin-left:
 }
 form{
 	width: 100%;
@@ -108,11 +114,29 @@ textarea{
 
 }
 /*Modue*/
+#placeholder{
+	width: 100%;
+	height: 400px;
+}
 figure{
 	width: 100%;
 }
+#goldmine{
+	width: 25%;
+}
 img{
 	max-width: 100%;
+	animation-name: slidein;
+	animation-duration: 1.5s;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
 }
 nav > a{
 	font-size: 1em;
@@ -144,19 +168,8 @@ input[type=file]{
 	text-decoration: none;
 	border: none;
 }
-.blogTitle{
-	font-weight: bold;
-}
 input{
 	padding: 0.236em 0.236em 0.236em 0.236em;
-}
-
-.customUpload{
-	color: grey;
-	fill: currentColor;
-	width: 11.089em;
-	display: inline-block;
-  cursor: pointer;
 }
 textarea{
 	resize: none;

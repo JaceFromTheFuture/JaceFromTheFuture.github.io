@@ -30,7 +30,7 @@ exports.blog_create = function(req, res){
 };
 
 exports.blog_view = function(req, res){
-  Blog.findById(req.params.id).exec(function (err, blog){
+  Blog.findByIdAndUpdate(req.params.id, {$inc: {hits:1}}, function (err, blog){
     if(err){
       return next(err);
     }
@@ -53,7 +53,7 @@ exports.blog_update = function(req, res){
 
   console.log(new_blog);
 
-  Blog.findOneAndUpdate({_id: req.params.id}, new_blog, {new: true}, function(err, blog) {
+  Blog.findOneAndUpdate({_id: req.params.id}, new_blog , function(err, blog) {
     if (err){
       res.send(err);
     }
