@@ -7,9 +7,26 @@ $(function() {
   }
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    var data = [];
+
+    for ( var i = 0, len = response.length; i < len; ++i ){
+      data.push([response[i].title, response[i].hits]);
+    }
+    console.log(data.toString());
+    $.plot("#placeholder", [ data ], {
+			series: {
+				bars: {
+					show: true,
+					barWidth: 0.6,
+					align: "center"
+				}
+			},
+			xaxis: {
+				mode: "categories",
+				tickLength: 0
+			}
+		});
+
   });
-var d1 = [[0, 3], [4, 8], [8, 5], [9, 13]];
-$.plot("#placeholder", [d1]);
 
 });
