@@ -1,10 +1,4 @@
 var request = require('request');
-var aws = require('aws-sdk');
-var amazon = require('../aws_credentials');
-
-var awsKeyID = amazon.AWS_ACCESS_KEY;
-var awsSecretKey = amazon.AWS_SECRET_KEY;
-var awsBucket = amazon.S3_BUCKET;
 
 exports.dashboard_get = function(req, res){
   var options = { method: 'GET',
