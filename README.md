@@ -8,6 +8,7 @@ The target audience will be people who like music and would like to stay up to d
 ## Instillation Instructions
 
 Clone the repository.
+https://github.com/JaceFromTheFuture/JaceFromTheFuture.github.io.git
 
 NPM install to install the application.
 
