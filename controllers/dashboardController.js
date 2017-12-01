@@ -24,7 +24,7 @@ exports.dashboard_edit_get = function(req, res){
     }
     else {
       var blog = JSON.parse(body);
-      res.render('blog_form', {blog : blog});
+      res.render('blog_form', {title: 'Edit Blog', blog : blog});
     }
   });
 };
