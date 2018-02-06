@@ -55,17 +55,17 @@ body {
   background-color: #F2F3F1;
   font-family: 'Exo 2', sans-serif;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.999em;
   color: #333;
 }
 
-p {margin-bottom: 1.3em;}
+p {margin-bottom: 1.414em;}
 
 h1, h2, h3, h4 {
 	text-align: center;
 	margin: 1.414em 0 0.5em;
 	font-weight: inherit;
-	line-height: 1.2;
+	line-height: 1.414em;
 }
 
 h1 {
@@ -87,7 +87,10 @@ a:visited{
 }
 /*Layout*/
 main{
-	padding: 2.827em 2.827em 2.827em 2.827em;
+	padding: 3.998em 1.414em 3.998em 1.414em;
+}
+footer{
+
 }
 /*Modue*/
 #logo {
@@ -115,7 +118,7 @@ iframe{
 	height: 20px;
 }
 #billboard{
-	background: #080903;
+	background: #030301;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -123,7 +126,11 @@ iframe{
 	color: inherit;
 }
 img{
-	margin: 0 auto;
+	display: block;
+	margin-top: 1.414em;
+	margin-bottom: 1.414em;
+	margin-left: auto;
+  margin-right: auto;
 	max-width: 100%;
 }
 footer{
@@ -131,3 +138,23 @@ footer{
 	margin-top: 1.414em;
 }
 /*State*/
+@media (min-width: 700px) {
+	main{
+		text-align: center;
+		margin: auto;
+		margin-left: auto;
+	  margin-right: auto;
+		width: 31.952em;
+	}
+
+}
+@media (min-width: 900px) {
+	main{
+		text-align: center;
+		margin: auto;
+		margin-left: auto;
+	  margin-right: auto;
+		width: 45.18em;
+	}
+
+}
