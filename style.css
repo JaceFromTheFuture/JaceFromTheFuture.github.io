@@ -103,7 +103,7 @@ footer{
 }
 nav > a {
 	text-decoration: none;
-	color: grey;
+	color: gray;
 }
 nav > a:visited {
 	text-decoration: none;
@@ -134,8 +134,10 @@ img{
 	max-width: 100%;
 }
 footer{
+	border-top: 1px solid #333;
 	text-align: center;
-	margin-top: 1.414em;
+	margin-top: 1.999em;
+	padding: 3.998em 0 0 0;
 }
 /*State*/
 @media (min-width: 700px) {
