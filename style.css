@@ -71,15 +71,15 @@ h1, h2, h3, h4 {
 h1 {
   margin-top: 0;
   font-size: 1.999em;
-	font-weight: bold;
 	color: black;
 }
 
-h2 {font-size: 1.999em;}
+h2 {font-size: 1.414em;}
 
 h3 {font-size: 1.414em;}
 
 a {
+	font-size: 0.707em;
 	color: gray;
 	text-decoration: none;
 }
