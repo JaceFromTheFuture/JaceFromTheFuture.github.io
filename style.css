@@ -70,7 +70,8 @@ h1, h2, h3, h4 {
 
 h1 {
   margin-top: 0;
-  font-size: 2.827em;
+  font-size: 1.999em;
+	font-weight: bold;
 	color: black;
 }
 
@@ -136,8 +137,8 @@ img{
 footer{
 	border-top: 1px solid #333;
 	text-align: center;
-	margin-top: 3.998em;
-	padding: 3.998em 0 0 0;
+	margin-top: 2.827em;
+	padding: 2.827em 0 0 0;
 }
 /*State*/
 @media (min-width: 700px) {
